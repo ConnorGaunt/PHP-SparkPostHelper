@@ -71,7 +71,7 @@ That's it. That's the bare minimum to send emails via SparkPost using this helpe
 ```PHP
 $sparkPostHelper->fromName("PHP-SparkPostHelper");
 ```
-![From Name Example](http://connorgaunt.com/opensource/emailsuccessfrom.png 'From Name Example')
+![From Name Example](http://connorgaunt.com/opensource/emailsuccessfrom.png 'From Name Example')  
 
 
 
@@ -88,7 +88,7 @@ $sparkPostHelper->recipients(array(
     "example@example.com"
 ));
 ```  
-![Recipient Example](http://connorgaunt.com/opensource/recip.png 'Recipient Example')
+![Recipient Example](http://connorgaunt.com/opensource/recip.png 'Recipient Example')  
 
 #### ->subject(STRING)  
 * __Required__: YES
@@ -97,7 +97,19 @@ $sparkPostHelper->recipients(array(
 ```PHP
 $sparkPostHelper->subject("This is an email subject line.");
 ```
-![Subject Line Example](http://connorgaunt.com/opensource/emailsuccesssub.png 'Subject Line Example')
+![Subject Line Example](http://connorgaunt.com/opensource/emailsuccesssub.png 'Subject Line Example')  
+
+
+
+#### ->replyTo(STRING)  
+* __Required__: NO
+* __Description__: If you want a user to hit reply, this will be the reply email address.
+* __Parameters__: 1, STRING
+```PHP
+$sparkPostHelper->subject("contact@connorgaunt.com");
+```
+![Reply To Example](http://connorgaunt.com/opensource/emailreplyto.png 'Reply To Example')  
+
 
 
 #### ->html(STRING)  
@@ -107,7 +119,19 @@ $sparkPostHelper->subject("This is an email subject line.");
 ```PHP
 $sparkPostHelper->subject("This is an email subject line.");
 ```
-![HTML Body Content](http://connorgaunt.com/opensource/emailhtmlbody.png 'Html Body')
+![HTML Body Content](http://connorgaunt.com/opensource/emailhtmlbody.png 'Html Body')  
+
+
+
+#### ->text(STRING)  
+* __Required__: YES
+* __Description__: This is the default fallback content for all email clients, this will be your emails if html is not supported.
+* __Parameters__: 1, STRING
+```PHP
+$sparkPostHelper->subject("This is an email subject line.");
+```
+![HTML Text Content](http://connorgaunt.com/opensource/emailtextbody.png 'Text Body')
+
 
 
 
