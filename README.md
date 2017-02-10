@@ -1,9 +1,10 @@
+
 # SparkPostHelper v1.0.0 - PHP
-### Description
-SparkPostHelper is a __PHP based__ helper class to send emails __via the [SparkPost](https://www.sparkpost.com "SparkPost's Website ") API__. The reason for creating this class was the [libary](https://github.com/SparkPost/php-sparkpost) linked in the SparkPost API docs required other packages and a PHP version above 5.6, which wasn't possible on the project I was working on. This class uses cURL so it will work in pretty much every version of PHP and not require any other packages to work.    
+## Description
+SparkPostHelper is a __PHP based__ helper class to send emails __via the [SparkPost](https://www.sparkpost.com "SparkPost's Website ") API__. The reason for creating this class is that the [libary](https://github.com/SparkPost/php-sparkpost) linked in the SparkPost API docs required other packages and a PHP version above 5.6, which wasn't possible on the project I was working on. This class uses cURL so it will work in pretty much every version of PHP and not require any other packages to work.    
 
 
-### Installation  
+## Installation  
 Currently the only way to install this helper class is to do it manually. (Plans to eventually submit to [Packagist](https://packagist.org/ 'Packageist Home Page') for installtion via [Composer](https://getcomposer.org/ 'Composer Home Page'))   
 
 1. Click the button at the top of this repo, then download zip.  
@@ -26,7 +27,7 @@ include ('PATH_TO_COPIED_LIB/lib/SparkPostHelper/_autoload.php');
 use SparkPostHelper\SparkPostHelper;
 ```
   
-### Basic Usage  
+## Basic Usage  
 To use the SparkPostHelper class, you need to call it with two paramters:
 ```PHP
 $sparkPostHelper = new SparkPostHelper("<API_KEY>","<SENDING_DOMAIN>");
@@ -40,10 +41,10 @@ $sparkPostHelper = new SparkPostHelper("<API_KEY>","<SENDING_DOMAIN>");
   * eg: email.example.com  
 
 Before we can send any emails, we need to define a few things:
-* Recipients
-* Subject Line
-* HTML (Email Content) 
-* Plain Text (Fallback Email Content)
+* Recipients - _Required_
+* Subject Line - _Required_
+* HTML (Email Content) - _Required_
+* Plain Text (Fallback Email Content) - _Required_
 
 ``` PHP 
 $sparkPostHelper = new SparkPostHelper(SPARK_POST_API_KEY, SPARK_SENDING_DOMAIN);
@@ -53,7 +54,61 @@ $sparkPostHelper->recipients(array(
     "exampleexample@live.co.uk",
 ));
 $sparkPostHelper->subject("First SparkPost Email Via Helper");
-$sparkPostHelper->html("<h1>This is asweome!</h1><p>This is my first email sent with SparkPostHelper</p>");
+$sparkPostHelper->html("<h1>This is asweome!</h1><p>This is my first email with SparkPostHelper</p>");
 $sparkPostHelper->text("This is asweome!!! This is my first email sent with SparkPostHelper.");
+$response = $sparkPostHelper->send();
 ```
+
+That's it. That's the bare minimum to send emails via SparkPost using this helper class.
+
+
+## Let's Explain Those Methods!
+
+#### ->fromName(STRING)  
+* __Required__: NO
+* __Description__: This method is used to set the email sender's name, usually apprears above subject line of the emails.
+* __Parameters__: 1, STRING
+```PHP
+$sparkPostHelper->fromName("PHP-SparkPostHelper");
+```
+![From Name Example](http://connorgaunt.com/opensource/emailsuccessfrom.png 'From Name Example')
+
+
+
+#### ->recipients(ARRAY)  
+* __Required__: YES
+* __Description__: This method is used to set the recipients of the emails. It takes an array of strings (Email Addresses).  If you make the array associative you can attch a name to the recipient email, this is optional. See example.
+* __Parameters__: 1, Array
+```PHP
+$sparkPostHelper->recipients(array(
+    "Person Name" => "example@example.com",
+    "example@example.com", 
+    "example@example.com",
+    "Person Name" => "example@example.com",
+    "example@example.com"
+));
+```  
+![Recipient Example](http://connorgaunt.com/opensource/recip.png 'Recipient Example')
+
+#### ->subject(STRING)  
+* __Required__: YES
+* __Description__: This method is used to set the subject line of the emails.
+* __Parameters__: 1, STRING
+```PHP
+$sparkPostHelper->subject("This is an email subject line.");
+```
+![Subject Line Example](http://connorgaunt.com/opensource/emailsuccesssub.png 'Subject Line Example')
+
+
+#### ->html(STRING)  
+* __Required__: YES
+* __Description__: This is the default main body content for most email clients, this will be your emails.
+* __Parameters__: 1, STRING
+```PHP
+$sparkPostHelper->subject("This is an email subject line.");
+```
+![HTML Body Content](http://connorgaunt.com/opensource/emailhtmlbody.png 'Html Body')
+
+
+
 
