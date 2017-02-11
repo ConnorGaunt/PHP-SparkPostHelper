@@ -2,6 +2,7 @@
 
 namespace SparkPostHelper;
 use \Exception as Exception;
+use \PHPUnit_Framework_TestCase as PHPUnit_Framework_TestCase;
 
 class SparkPostHelper extends PHPUnit_Framework_TestCase{
     // Setting up SparkPost
