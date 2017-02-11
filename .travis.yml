@@ -7,4 +7,4 @@ php:
   - '7.1'
   - hhvm
   - nightly
-script: lib/SparkPostHelper/_autoload.php
+phpunit: lib/SparkPostHelper/_autoload.php
