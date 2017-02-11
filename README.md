@@ -1,7 +1,20 @@
 
-# SparkPostHelper v1.0.0 - PHP
+# SparkPostHelper  
+-------------------------
+v1.0.0 - PHP  
+-------------------------  
 ## Description
 SparkPostHelper is a __PHP based__ helper class to send emails __via the [SparkPost](https://www.sparkpost.com "SparkPost's Website ") API__. The reason for creating this class is that the [libary](https://github.com/SparkPost/php-sparkpost) linked in the SparkPost API docs required other packages and a PHP version above 5.6, which wasn't possible on the project I was working on. This class uses cURL so it will work in pretty much every version of PHP and not require any other packages to work.    
+
+
+## Contents
+* [Installation](#description)
+* [Basic Usage](#basic-usage)
+* [Let's Explain Those Methods!](#lets-explain-those-methods)
+* [Plans For The Future](#plans-for-the-future)
+* [Contact](#contact)  
+
+
 
 
 ## Installation  
@@ -142,11 +155,28 @@ $sparkPostHelper->subject("This is an email subject line.");
 $response = $sparkPostHelper->send();
 // Response will be an array containing the object sent back from SparkPost
 // such as error messages or success'
-
-```
-
+```  
 
 
+## Plans For The Future
+This is my first ever open source project so I started of very small. I would love to implement more of the [API's features](https://developers.sparkpost.com/api/transmissions.html) into this class but I believe this is everything you need for the very very basic to start sending emails right away. But in case you were wondering what I want to implement in the future, here's a list of a few of them.  
+* CC 
+* BCC
+* Use Stored Email Templates
+* Set Email Options
+* Email Description
+* Attachments
+* Use Stored Recipient List  
+
+  
+  
+## Contact
+Please if you find an issue with the class please don't hesitate to post an issue. If you're wanting to see more of me, here are a few of my active social media links.  
+[Website](http://connorgaunt.com)  
+[Twitter](http://twitter.com/Connor_Gaunt)  
+[Instagram](http://instagram.com/ConnorGaunt)  
+[CodePen](http://codepen.io/ConnorGaunt)  
+[Twitch](http://twitch.tv/ConnorGaunt)  
 
 
 
