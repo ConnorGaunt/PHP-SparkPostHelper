@@ -1,5 +1,5 @@
 <?php 
-class SparkPostHelper extends PHPUnit_Framework_TestCase{
+class Test extends PHPUnit_Framework_TestCase{
     // Setting up SparkPost
     private $API_KEY = NULL;            // API key generated in SparkPost
     private $sendingDomain = NULL;      // Sending domain set in SparkPost
