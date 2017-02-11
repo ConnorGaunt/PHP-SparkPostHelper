@@ -134,5 +134,21 @@ $sparkPostHelper->subject("This is an email subject line.");
 
 
 
+#### ->send()  
+* __Required__: YES
+* __Description__: This method is where all the magic happens, calling this method will send the email will all the information you set beforehand. Calling this method will return an array, so you can save that to a variable to check for errors and such.
+* __Parameters__: 0
+```PHP
+$response = $sparkPostHelper->send();
+
+// Response will be an array containing the object sent back from SparkPost such as error messages or success'
+
+```
+
+
+
+
+
+
 
 
