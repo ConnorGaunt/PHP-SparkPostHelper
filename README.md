@@ -140,8 +140,8 @@ $sparkPostHelper->subject("This is an email subject line.");
 * __Parameters__: 0
 ```PHP
 $response = $sparkPostHelper->send();
-
-// Response will be an array containing the object sent back from SparkPost such as error messages or success'
+// Response will be an array containing the object sent back from SparkPost
+// such as error messages or success'
 
 ```
 
