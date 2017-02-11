@@ -189,7 +189,7 @@ class SparkPostHelper{
             // If no errors found assign subject line
             $this->emailSubject = $subjectLine;
 
-        } catch (Exeption $error){
+        } catch (Exception $error){
             // If any errors are found with the subject, throw a fatal error with stack trace.
             trigger_error($error->__toString(), E_USER_ERROR);
         }
@@ -207,7 +207,7 @@ class SparkPostHelper{
             // if no errors are found assign html
             $this->emailHTML = $html;
 
-        } catch (Exeption $error){
+        } catch (Exception $error){
             // If any errors are found with the HTML, throw a fatal error with stack trace.
             trigger_error($error->__toString(), E_USER_ERROR);
         }
@@ -225,7 +225,7 @@ class SparkPostHelper{
             // if no errors are found assign text
             $this->backupEmailText = $text;
 
-        } catch (Exeption $error){
+        } catch (Exception $error){
             // If any errors are found with the HTML, throw a fatal error with stack trace.
             trigger_error($error->__toString(), E_USER_ERROR);
         }
@@ -243,7 +243,7 @@ class SparkPostHelper{
             // if no errors are found assign new reply email
             $this->emailReplyTo = $replyEmail;
 
-        } catch (Exeption $error){
+        } catch (Exception $error){
             // If any errors are found with the HTML, throw a fatal error with stack trace.
             trigger_error($error->__toString(), E_USER_ERROR);
         }
@@ -261,7 +261,7 @@ class SparkPostHelper{
             // if no errors are found assign new reply email
             $this->emailFromName = $fromName;
 
-        } catch (Exeption $error){
+        } catch (Exception $error){
             // If any errors are found with the HTML, throw a fatal error with stack trace.
             trigger_error($error->__toString(), E_USER_ERROR);
         }
@@ -344,9 +344,9 @@ class SparkPostHelper{
             return json_decode($promise,true);
 
 
-        } catch (Eception $error){
+        } catch (Exception $error){
             // If any errors have been found, display them while throwing a fatal error;
-            trigger_error($error->getMesage(), E_USER_ERROR);
+            trigger_error($error->getMessage(), E_USER_ERROR);
         }
 
     }
