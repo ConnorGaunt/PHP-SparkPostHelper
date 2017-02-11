@@ -1,14 +1,14 @@
 
 # SparkPostHelper  
--------------------------
-v1.0.0 - PHP  
--------------------------  
+
+###v1.0.0 - PHP  
+
 ## Description
 SparkPostHelper is a __PHP based__ helper class to send emails __via the [SparkPost](https://www.sparkpost.com "SparkPost's Website ") API__. The reason for creating this class is that the [libary](https://github.com/SparkPost/php-sparkpost) linked in the SparkPost API docs required other packages and a PHP version above 5.6, which wasn't possible on the project I was working on. This class uses cURL so it will work in pretty much every version of PHP and not require any other packages to work.    
 
 
 ## Contents
-* [Installation](#description)
+* [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [Let's Explain Those Methods!](#lets-explain-those-methods)
 * [Plans For The Future](#plans-for-the-future)
