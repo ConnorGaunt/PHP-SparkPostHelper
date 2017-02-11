@@ -88,7 +88,7 @@ $sparkPostHelper->recipients(array(
     "example@example.com"
 ));
 ```  
-![Recipient Example](http://connorgaunt.com/opensource/recip.png 'Recipient Example')  
+![Recipient Example](http://connorgaunt.com/opensource/recip1.png 'Recipient Example')  
 
 #### ->subject(STRING)  
 * __Required__: YES
@@ -97,7 +97,7 @@ $sparkPostHelper->recipients(array(
 ```PHP
 $sparkPostHelper->subject("This is an email subject line.");
 ```
-![Subject Line Example](http://connorgaunt.com/opensource/emailsuccesssub.png 'Subject Line Example')  
+![Subject Line Example](http://connorgaunt.com/opensource/emailsuccesssub1.png 'Subject Line Example')  
 
 
 
@@ -108,7 +108,7 @@ $sparkPostHelper->subject("This is an email subject line.");
 ```PHP
 $sparkPostHelper->subject("contact@connorgaunt.com");
 ```
-![Reply To Example](http://connorgaunt.com/opensource/emailreplyto.png 'Reply To Example')  
+![Reply To Example](http://connorgaunt.com/opensource/emailreplyto1.png 'Reply To Example')  
 
 
 
@@ -119,7 +119,7 @@ $sparkPostHelper->subject("contact@connorgaunt.com");
 ```PHP
 $sparkPostHelper->subject("This is an email subject line.");
 ```
-![HTML Body Content](http://connorgaunt.com/opensource/emailhtmlbody.png 'Html Body')  
+![HTML Body Content](http://connorgaunt.com/opensource/emailhtmlbody1.png 'Html Body')  
 
 
 
@@ -130,7 +130,7 @@ $sparkPostHelper->subject("This is an email subject line.");
 ```PHP
 $sparkPostHelper->subject("This is an email subject line.");
 ```
-![HTML Text Content](http://connorgaunt.com/opensource/emailtextbody.png 'Text Body')
+![HTML Text Content](http://connorgaunt.com/opensource/emailtextbody1.png 'Text Body')
 
 
 
