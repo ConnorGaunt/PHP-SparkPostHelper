@@ -1,11 +1,9 @@
 <?php 
 
-use \PHPUnit_Framework_TestCase;
-
 namespace SparkPostHelper;
 use \Exception as Exception;
 
-class SparkPostHelper extends PHPUnit_Framework_TestCase{
+class SparkPostHelper{
     // Setting up SparkPost
     private $API_KEY = NULL;            // API key generated in SparkPost
     private $sendingDomain = NULL;      // Sending domain set in SparkPost
