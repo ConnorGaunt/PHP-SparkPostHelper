@@ -60,7 +60,7 @@ Before we can send any emails, we need to define a few things:
 * Plain Text (Fall-back Email Content) - _Required_
 
 ``` PHP 
-$sparkPostHelper = new SparkPostHelper(SPARK_POST_API_KEY, SPARK_SENDING_DOMAIN);
+$sparkPostHelper = new SparkPostHelper("<API_KEY>","<SENDING_DOMAIN>");
 $sparkPostHelper->recipients(array(
     "example@example.co.uk",
     "example2@gmail.com",
