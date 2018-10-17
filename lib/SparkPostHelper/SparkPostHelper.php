@@ -16,6 +16,7 @@ class SparkPostHelper{
     private $emailRecipients = array(); // All Recipients to the email
     private $emailHTML = "";            // HTML for the email client to render
     private $backupEmailText = "";      // Backup text in-case Email doesn't support HTML
+    private $attachments = array();      // Backup text in-case Email doesn't support HTML
 
 
     // Function to check Parameter
@@ -267,6 +268,36 @@ class SparkPostHelper{
         }
     }
 
+    public function addAttachment($name, $type, $filePath){
+        try{
+            // Checking parameter text
+            $validName = $this->checkParamater($name, "Attachment Name" , "String");
+            $validType = $this->checkParamater($type, "Attachment Type" , "String");
+            $validFilePath = $this->checkParamater($filePath, "Attachment Data" , "String");
+            // If from name has an error
+            if($validName['error']){
+                // Throw error, with error message
+                throw new Exception($validName['errorMessage']);
+            }
+            // If from name has an error
+            if($validType['error']){
+                // Throw error, with error message
+                throw new Exception($validType['errorMessage']);
+            }
+            // If from name has an error
+            if($validFilePath['error']){
+                // Throw error, with error message
+                throw new Exception($validFilePath['errorMessage']);
+            }
+            // if no errors are found assign new reply email
+            array_push($this->attachments, array('name' => $name, 'type' => $type, 'data' => base64_encode(file_get_contents($filePath))));
+
+        } catch (Exception $error){
+            // If any errors are found with the HTML, throw a fatal error with stack trace.
+            trigger_error($error->__toString(), E_USER_ERROR);
+        }
+    }
+
     // Function to send the email.
     public function send(){
         try{
@@ -302,6 +333,7 @@ class SparkPostHelper{
                     "subject" => $this->emailSubject,
                     "html" => $this->emailHTML,
                     "text" => $this->backupEmailText,
+                    "attachments" => $this->attachments
                 ),
             );
 
